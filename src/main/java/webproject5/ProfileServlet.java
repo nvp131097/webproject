@@ -23,6 +23,14 @@ public class ProfileServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
+		response.setHeader("Cache-Control", "no-cache");
+		 response.setHeader("Cache-control", "no-store");
+		 response.setHeader("Pragma", "no-cache");
+		 response.setHeader("Expires","0");
+		 response.setDateHeader("Expires",0);
+		
+		
+		
 		HttpSession session = request.getSession(false);
 		
 		String uname = (String) session.getAttribute("uname");
